@@ -1,0 +1,6 @@
+Django
+spidev
+smbus2
+RPI.GPIO
+adafruit-blinka
+
