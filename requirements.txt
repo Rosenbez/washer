@@ -1,5 +1,6 @@
 Django
 spidev
+pyyaml
 smbus2
 RPI.GPIO
 adafruit-blinka
