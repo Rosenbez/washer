@@ -5,3 +5,4 @@ smbus2
 RPI.GPIO
 adafruit-blinka
 adafruit-circuitpython-mma8451
+influxdb
