@@ -22,7 +22,7 @@ sock.bind((UDP_IP, UDP_PORT))
 
 print('Starting UPD Socket')
 accel_buf ={}
-buf_lim = 10
+buf_lim = 30
 buf_count = 0
 
 while True:
