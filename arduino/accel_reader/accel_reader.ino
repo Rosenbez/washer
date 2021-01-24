@@ -7,8 +7,8 @@
 Adafruit_MMA8451 mma = Adafruit_MMA8451();
 
 #ifndef STASSID
-#define STASSID "rdh2"
-#define STAPSK  "YZ12345678"
+#define STASSID "xxxx"
+#define STAPSK  "xxx"
 #endif
 
 unsigned int localPort = 5005;      // local port to listen on
