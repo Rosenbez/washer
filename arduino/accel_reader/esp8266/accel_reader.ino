@@ -7,8 +7,8 @@
 Adafruit_MMA8451 mma = Adafruit_MMA8451();
 
 #ifndef STASSID
-#define STASSID "xxxx"
-#define STAPSK  "xxx"
+#define STASSID "Holodeck3-2.4"
+#define STAPSK  "rikerprogram1"
 #endif
 
 unsigned int localPort = 5005;      // local port to listen on
@@ -22,8 +22,7 @@ char y_val[11];
 char z_val[11];
 
 WiFiUDP Udp;
-IPAddress ip(192, 168, 7, 54);
-
+IPAddress ip(192, 168, 1, 187);
 void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
