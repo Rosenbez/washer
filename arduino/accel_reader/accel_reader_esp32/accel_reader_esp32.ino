@@ -1,5 +1,5 @@
 /*
- *  This sketch sends random data over UDP on a ESP32 device
+ *  This sketch sends accelerometer data over UDP to a server.
  *
  */
 #include <WiFi.h>
