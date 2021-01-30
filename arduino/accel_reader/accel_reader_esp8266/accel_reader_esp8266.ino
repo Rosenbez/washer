@@ -7,8 +7,8 @@
 Adafruit_MMA8451 mma = Adafruit_MMA8451();
 
 #ifndef STASSID
-#define STASSID "Holodeck3-2.4"
-#define STAPSK  "rikerprogram1"
+#define STASSID "xxx"
+#define STAPSK  "xxx"
 #endif
 
 unsigned int localPort = 5005;      // local port to listen on
