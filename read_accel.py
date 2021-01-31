@@ -6,16 +6,16 @@ import csv
 
 
 def write_data(data_dict):
-    with open('accel_logs.csv', 'a', newline='') as csvfile:
+    with open("accel_logs.csv", "a", newline="") as csvfile:
         writer = csv.writer(csvfile)
         for t in data_dict:
-            writer.writerow([str(t), data_dict[t]['x'],
-                            data_dict[t]['y'],
-                            data_dict[t]['z']])
-    print('data written')
+            writer.writerow(
+                [str(t), data_dict[t]["x"], data_dict[t]["y"], data_dict[t]["z"]]
+            )
+    print("data written")
 
 
-class washer_client():
+class washer_client:
     def __init__(self):
         self._accel_buf = {}
         self._readings_per_avg = 10
@@ -35,7 +35,7 @@ class washer_client():
             # write_data(accel_buf)
             self.accel_calculate()
             print(f"Battery: {accel_data['batt']:.3f}V")
-            self._batt = accel_data['batt']
+            self._batt = accel_data["batt"]
             self._accel_buf = {}
             self._buf_count = 0
 
@@ -75,12 +75,12 @@ class washer_client():
         print(f"x mean: {xmean}, x stdev: {xdev:.7f}")
 
 
-class udp_connection():
+class udp_connection:
     def __init__(self, udp_ip, udp_port):
         self._udp_ip = udp_ip
         self._udp_port = udp_port
         self._sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self._sock.bind(('', self._udp_port))
+        self._sock.bind(("", self._udp_port))
 
     def read_json_data(self) -> dict:
         # Read json/yaml from the given socket, return a dict
@@ -88,17 +88,17 @@ class udp_connection():
         accel_data = yaml.safe_load(data)
         # print('recieved message:', data.decode('utf-8'))
         # print(datetime.datetime.now())
-        #  print('from:', addr)
+        # print('from:', addr)
         return accel_data
 
 
 if __name__ == "__main__":
-    UDP_IP = '192.168.7.54'
+    UDP_IP = "192.168.7.54"
     UDP_PORT = 5005
 
     washer_udp = udp_connection(UDP_IP, UDP_PORT)
     washer = washer_client()
-    print('Starting UPD Socket')
+    print("Starting UPD Socket")
     while True:
         accel_data = washer_udp.read_json_data()
         ts = datetime.datetime.now()
