@@ -6,3 +6,6 @@ RPI.GPIO
 adafruit-blinka
 adafruit-circuitpython-mma8451
 influxdb
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
